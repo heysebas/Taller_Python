@@ -33,19 +33,19 @@
 # Se debe usar: cadenas, ciclo while (para la validación), comprobación de tipos de variables, condicionales.
 # No se debe usar: ciclo for.
 
-entrada = input('Ingrese un número entero entre 1904 y 2196: ')
-
-while not entrada.isnumeric():
-    entrada = input('Ingrese un número entero entre 1904 y 2196: ')
-
-entrada = int(entrada)
-while entrada < 1904 or entrada > 2196:
-    entrada = int(input("Ingrese un número entero entre 1904 y 2196: "))
-
-if (entrada % 4 == 0 and not entrada % 100 == 0) or entrada % 400 == 0:
-    print(f'El año {entrada} es bisiesto')
-else:
-    print(f'El año {entrada} no es bisiesto')
+# entrada = input('Ingrese un número entero entre 1904 y 2196: ')
+#
+# while not entrada.isnumeric():
+#     entrada = input('Ingrese un número entero entre 1904 y 2196: ')
+#
+# entrada = int(entrada)
+# while entrada < 1904 or entrada > 2196:
+#     entrada = int(input("Ingrese un número entero entre 1904 y 2196: "))
+#
+# if (entrada % 4 == 0 and not entrada % 100 == 0) or entrada % 400 == 0:
+#     print(f'El año {entrada} es bisiesto')
+# else:
+#     print(f'El año {entrada} no es bisiesto')
 
 # 3. (1.25 puntos) Diseña un algoritmo de validación de usuario,
 # pidiendo un login y una contraseña y se comparen ambos valores
@@ -53,32 +53,32 @@ else:
 # correctamente los valores, se muestra el mensaje "Login y contraseña
 # correctos" y termina el programa; en caso contrario, se muestra el mensaje
 # "Login incorrecto" o "Contraseña incorrecta" o "Login y contraseña incorrectos",
-# según corresponda. Se permite repetir el proceso un máximo de tres veces. En caso de i
-# ngresar la contraseña incorrecta más de tres veces, se debe mostrar el mensaje "Usuario bloqueado".
+# según corresponda. Se permite repetir el proceso un máximo de tres veces. En caso de ingresar la contraseña
+# incorrecta más de tres veces, se debe mostrar el mensaje "Usuario bloqueado".
 # Se deben utilizar: Sentencias vistas hasta la fecha.
 
-# user = "admin"
-# contrasena = "admin"
-
-x = 0
-
-# while x < 3:
-#     login = input("Ingrese el Usuario: ")
-#     password = input("Ingrese la contraseña: ")
+#Preguntar duda sobre este ejercicio
+# usuario = 'admin'
+# contrasena = 'admin'
 #
-#     if login == user and password == contrasena:
-#         print(f'el nombre del usuario: {login} y la contaseña son correcta')
+# intentos = 0
+# while intentos < 3:
+#
+#     login = input('Ingrese el usuario: ')
+#     password = input('Ingrese la contraseña: ')
+#
+#     if login == usuario and password == contrasena:
+#         print('Login y contraseña correcta')
 #         break
+#     elif login != usuario and password != contrasena:
+#         print('Login y contraseña incorrectos')
+#     elif (not login == usuario and password == contrasena):
+#         print('Login incorrecto')
 #     else:
-#         x += 1
-#         if x == 3:
-#             print('la cantindad de intento fue superada y la cuenta se bloqueara temporalmente')
-#             break
-#         else:
-#             if login != user:
-#                 print(f'El usuario: {login} es incorrecto')
-#             if password != contrasena:
-#                 print('La contraseña es incorrecto')
+#         intentos += 1
+#         print('Contraseña incorrecta')
+# else:
+#     print('Usuario bloqueado')
 
 # 4. (1.25 puntos) Programme un algoritmo que solicite al usuario 5 números enteros
 # (se debe validar que sean números enteros, positivos o negativos). Luego muestre lo
