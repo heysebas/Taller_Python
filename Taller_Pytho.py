@@ -83,26 +83,53 @@
 # 4. (1.25 puntos) Programme un algoritmo que solicite al usuario 5 números enteros
 # (se debe validar que sean números enteros, positivos o negativos). Luego muestre lo
 # siguiente: el valor mínimo, el valor máximo, la suma de los números, el promedio y
-# los números ordenados de mayor a menor. No se debe usar: listas, ni otra estructura similar.
+# los números ordenados de mayor a menor.
+# No se debe usar: listas, ni otra estructura similar.
 
-# minimo = float('inf')
-# maximo = float('-inf')
-# suma = 0
-#
-# for i in range(5):
-#     while True:
-#         try:
-#             num = int(input(f'Ingrese el número {i + 1}: '))
-#             break
-#         except ValueError:
-#             print('Por favor, ingresar un número entero válido.')
-#
-#     if num < minimo:
-#         minimo = num
-#     if num > maximo:
-#         maximo = num
-#     suma += num
-#
-# promedio = suma / 5
-#
-# print(f'Valor mínimo: {minimo}\nValor máximo: {maximo}\nSuma de los números: {suma}\nPromedio de los números: {promedio}')
+minimo = 0
+maximo = 0
+suma = 0
+
+menor = 0
+orden2 = 0
+orden3 = 0
+orden4 = 0
+mayor = 0
+
+print('Ingrese 5 números enteros')
+
+for i in range(1, 6):
+
+    numero = input(f'Numero {i}. Ingrese un número entero: ')
+    valido = numero.isdigit()
+
+    while not valido:
+        if numero.startswith('-') and numero[1:].isdigit():
+            valido = True
+        else:
+            numero = input('Por favor, ingrese un número entero: ')
+
+    numero = int(numero)
+    if minimo == 0 or numero < minimo:
+        minimo = numero
+    elif maximo == 0 or numero > maximo:
+        maximo = numero
+
+    suma += numero
+
+    if menor == 0 or numero < menor:
+        menor, orden2, orden3, orden4, mayor = numero, menor, orden2, orden3, orden4
+    elif orden2 == 0 or numero < orden2:
+        orden2, orden3, orden4, mayor = numero, orden2, orden3, orden4
+    elif orden3 == 0 or numero < orden3:
+        orden3, orden4, mayor = numero, orden3, orden4
+    elif orden4 == 0 or numero < orden4:
+        orden4, mayor = numero, orden4
+    else:
+        mayor = numero
+
+print(f'El valor máximo es: {maximo}'
+      f'\nEl valor mínimo es: {minimo}'
+      f'\nLa suma de los números es: {suma}'
+      f'\nEl promedio de los números es: {suma/5}'
+      f'\nEl orden de los números de mayor a menor es: {mayor}, {orden4}, {orden3}, {orden2}, {menor}')
