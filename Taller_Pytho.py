@@ -110,20 +110,20 @@ for i in range(1, 6):
             numero = input('Por favor, ingrese un número entero: ')
 
     numero = int(numero)
-    if minimo == 0 or numero < minimo:
+    if not minimo or numero < minimo:
         minimo = numero
-    elif maximo == 0 or numero > maximo:
+    elif not maximo or numero > maximo:
         maximo = numero
 
     suma += numero
 
-    if menor == 0 or numero < menor:
+    if not menor or numero < menor:
         menor, orden2, orden3, orden4, mayor = numero, menor, orden2, orden3, orden4
-    elif orden2 == 0 or numero < orden2:
+    elif not orden2 or numero < orden2:
         orden2, orden3, orden4, mayor = numero, orden2, orden3, orden4
-    elif orden3 == 0 or numero < orden3:
+    elif not orden3 or numero < orden3:
         orden3, orden4, mayor = numero, orden3, orden4
-    elif orden4 == 0 or numero < orden4:
+    elif not orden4 or numero < orden4:
         orden4, mayor = numero, orden4
     else:
         mayor = numero
